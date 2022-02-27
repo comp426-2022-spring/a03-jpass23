@@ -83,8 +83,18 @@ app.get('/app/flips/:number', (req, res) => {
 	res.json(flips)
 });
 
+app.get('/app/flip/call/heads', (req, res) => {
+    res.status(200).type('text/json');
+	res.json(flipACoin('heads'))
+});
+
+app.get('/app/flip/call/tails', (req, res) => {
+    res.status(200).type('text/json');
+	res.json(flipACoin('tails'))
+});
+
 // Default response for any other request
 app.use(function(req, res){
     res.status(404).type("text/plain")
-    res.send('404 Not found')    
+    res.send('404 NOT FOUND')    
 });
