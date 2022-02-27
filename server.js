@@ -74,11 +74,17 @@ app.get('/app/flip/', (req, res) => {
 });
 
 app.get('/app/flips/:number', (req, res) => {
-	res.send(req.params.number)
+    res.status(200).type('text/json');
+    var x = coinFlips(isFinite(req.params.number)?req.params.number:1);
+    const flips = {
+        raw: x,
+        summary: countFlips(x),
+    }
+	res.json(flips)
 });
 
 // Default response for any other request
 app.use(function(req, res){
-    res.status(404).send('404 Not found')
-    res.type("text/plain")
+    res.status(404).type("text/plain")
+    res.send('404 Not found')    
 });
