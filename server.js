@@ -58,7 +58,6 @@ const server = app.listen(HTTP_PORT, () => {
 
 // Setting Endpoint
 app.get('/app/', (req, res) => {
-// Respond with status 200
     res.statusCode = 200;
     res.statusMessage = 'OK';
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
