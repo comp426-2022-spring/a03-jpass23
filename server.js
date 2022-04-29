@@ -93,7 +93,6 @@ app.get('/app/flips/:number', (req, res) => {
 // 	res.json(flipACoin('tails'))
 // });
 
-
 app.get('/app/flip/call/:guess(heads|tails)', (req, res) => {
     res.status(200).type('text/json');
 	res.json(flipACoin(req.params.guess))
