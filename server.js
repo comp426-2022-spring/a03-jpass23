@@ -60,7 +60,6 @@ const server = app.listen(HTTP_PORT, () => {
 app.get('/app/', (req, res) => {
 // Respond with status 200
     res.statusCode = 200;
-// Respond with status message "OK"
     res.statusMessage = 'OK';
     res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
     res.end(res.statusCode+ ' ' +res.statusMessage)
