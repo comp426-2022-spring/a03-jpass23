@@ -10,7 +10,6 @@ function coinFlips(flips) {
     }
     return arr;
 }
-
 function countFlips(array) {
     const counter = {
       heads: 0,
