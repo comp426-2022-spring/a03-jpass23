@@ -28,6 +28,8 @@ function countFlips(array) {
     return counter
 }
 
+
+
 function flipACoin(call) {
     const object = {
       call: '',
