@@ -83,15 +83,23 @@ app.get('/app/flips/:number', (req, res) => {
 	res.json(flips)
 });
 
-app.get('/app/flip/call/heads', (req, res) => {
+// app.get('/app/flip/call/heads', (req, res) => {
+//     res.status(200).type('text/json');
+// 	res.json(flipACoin('heads'))
+// });
+
+// app.get('/app/flip/call/tails', (req, res) => {
+//     res.status(200).type('text/json');
+// 	res.json(flipACoin('tails'))
+// });
+
+
+app.get('/app/flip/call/:guess(heads|tails)', (req, res) => {
     res.status(200).type('text/json');
-	res.json(flipACoin('heads'))
+	res.json(flipACoin(req.params.guess))
 });
 
-app.get('/app/flip/call/tails', (req, res) => {
-    res.status(200).type('text/json');
-	res.json(flipACoin('tails'))
-});
+
 
 // Default response for any other request
 app.use(function(req, res){
